@@ -2,6 +2,16 @@
 
 A modern, real-time weather chat application powered by AI and built with React, TypeScript, and Tailwind CSS. Get instant weather information for any city with natural conversational responses.
 
+## Project Screenshots
+
+### Homepage
+
+![Homepage](Images/screenshot_homepage.png)
+
+### Goal Input
+
+![Goal Input](Images/screenshot_goal.png)
+
 ## Features
 
 ✨ **AI-Powered Chat Interface**
@@ -271,3 +281,4 @@ For issues, questions, or suggestions, please open a GitHub issue.
 ---
 
 **Built with ❤️ using React, Vite, and Supabase**
+
