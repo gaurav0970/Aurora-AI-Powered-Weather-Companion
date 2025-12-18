@@ -8,9 +8,15 @@ A modern, real-time weather chat application powered by AI and built with React,
 
 ![Homepage](Images/screenshot_homepage.png)
 
-### Goal Input
+### Input
 
 ![Goal Input](Images/screenshot_goal.png)
+
+
+## Video Demonstration
+
+[▶️ Platform Walkthrough](https://drive.google.com/file/d/1rfrGE39o_u1ND8AYxUfQ3hI4d62OxVpa/view?usp=sharing)
+
 
 ## Features
 
@@ -281,4 +287,5 @@ For issues, questions, or suggestions, please open a GitHub issue.
 ---
 
 **Built with ❤️ using React, Vite, and Supabase**
+
 
