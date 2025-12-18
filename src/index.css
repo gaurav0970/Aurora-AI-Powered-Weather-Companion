@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 222 47% 6%;
+    --foreground: 210 40% 96%;
+
+    --card: 222 47% 8%;
+    --card-foreground: 210 40% 96%;
+
+    --popover: 222 47% 8%;
+    --popover-foreground: 210 40% 96%;
+
+    --primary: 173 80% 50%;
+    --primary-foreground: 222 47% 6%;
+
+    --secondary: 280 60% 50%;
+    --secondary-foreground: 210 40% 96%;
+
+    --muted: 222 30% 15%;
+    --muted-foreground: 215 20% 60%;
+
+    --accent: 160 70% 40%;
+    --accent-foreground: 210 40% 96%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 222 30% 18%;
+    --input: 222 30% 18%;
+    --ring: 173 80% 50%;
+
+    --radius: 1rem;
+
+    /* Aurora colors */
+    --aurora-teal: 173 80% 50%;
+    --aurora-purple: 280 60% 50%;
+    --aurora-green: 160 70% 45%;
+    --aurora-pink: 330 70% 55%;
+    --aurora-blue: 210 80% 55%;
+
+    /* Glass effect */
+    --glass-bg: 222 47% 10% / 0.6;
+    --glass-border: 210 40% 96% / 0.1;
+
+    --sidebar-background: 222 47% 6%;
+    --sidebar-foreground: 210 40% 96%;
+    --sidebar-primary: 173 80% 50%;
+    --sidebar-primary-foreground: 222 47% 6%;
+    --sidebar-accent: 222 30% 15%;
+    --sidebar-accent-foreground: 210 40% 96%;
+    --sidebar-border: 222 30% 18%;
+    --sidebar-ring: 173 80% 50%;
+  }
+
+  .dark {
+    --background: 222 47% 6%;
+    --foreground: 210 40% 96%;
+    --card: 222 47% 8%;
+    --card-foreground: 210 40% 96%;
+    --popover: 222 47% 8%;
+    --popover-foreground: 210 40% 96%;
+    --primary: 173 80% 50%;
+    --primary-foreground: 222 47% 6%;
+    --secondary: 280 60% 50%;
+    --secondary-foreground: 210 40% 96%;
+    --muted: 222 30% 15%;
+    --muted-foreground: 215 20% 60%;
+    --accent: 160 70% 40%;
+    --accent-foreground: 210 40% 96%;
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 222 30% 18%;
+    --input: 222 30% 18%;
+    --ring: 173 80% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Grotesk', sans-serif;
+  }
+}
+
+@layer components {
+  .glass-panel {
+    @apply bg-card/60 backdrop-blur-xl border border-foreground/10 shadow-2xl;
+  }
+
+  .aurora-glow {
+    box-shadow: 
+      0 0 60px hsl(var(--aurora-teal) / 0.3),
+      0 0 120px hsl(var(--aurora-purple) / 0.2),
+      0 0 180px hsl(var(--aurora-green) / 0.1);
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(
+      135deg,
+      hsl(var(--aurora-teal)) 0%,
+      hsl(var(--aurora-purple)) 50%,
+      hsl(var(--aurora-pink)) 100%
+    );
+  }
+}
+
+@layer utilities {
+  /* Aurora animated background */
+  @keyframes aurora-flow {
+    0%, 100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+
+  @keyframes aurora-pulse {
+    0%, 100% {
+      opacity: 0.4;
+      transform: scale(1) translateY(0);
+    }
+    50% {
+      opacity: 0.7;
+      transform: scale(1.1) translateY(-20px);
+    }
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: -200% 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
+  }
+
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes typing {
+    0%, 60%, 100% {
+      transform: translateY(0);
+    }
+    30% {
+      transform: translateY(-5px);
+    }
+  }
+
+  .animate-aurora-flow {
+    animation: aurora-flow 15s ease infinite;
+    background-size: 400% 400%;
+  }
+
+  .animate-aurora-pulse {
+    animation: aurora-pulse 8s ease-in-out infinite;
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-shimmer {
+    animation: shimmer 3s linear infinite;
+    background-size: 200% 100%;
+  }
+
+  .animate-fade-in-up {
+    animation: fade-in-up 0.5s ease-out forwards;
+  }
+
+  .animate-typing-1 {
+    animation: typing 1.4s ease-in-out infinite;
+  }
+
+  .animate-typing-2 {
+    animation: typing 1.4s ease-in-out infinite 0.2s;
+  }
+
+  .animate-typing-3 {
+    animation: typing 1.4s ease-in-out infinite 0.4s;
+  }
+}
