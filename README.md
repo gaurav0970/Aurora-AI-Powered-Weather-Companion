@@ -60,7 +60,7 @@ A modern, real-time weather chat application powered by AI and built with React,
 
 **APIs:**
 - **Open-Meteo** - Free weather data API
-- **Lovable AI Gateway** - Claude/Gemini access
+- **AI Gateway** - Claude/Gemini access
 
 ## How It Works
 
@@ -102,8 +102,8 @@ Typewriter Display Effect
 
 1. **Clone the repository:**
 ```bash
-git clone https://github.com/yourusername/sky-gazer-bot.git
-cd sky-gazer-bot
+git clone https://github.com/gaurav0970/Aurora-AI-Powered-Weather-Companion
+cd Aurora-AI-Powered-Weather-Companion
 ```
 
 2. **Install dependencies:**
@@ -192,66 +192,6 @@ supabase/
         └── index.ts            # Edge Function for AI weather queries
 ```
 
-## Features in Detail
-
-### Typewriter Effect
-Responses display character-by-character at 12ms per character for engaging user experience.
-
-### Paragraph Formatting
-Weather metrics are displayed as bold values in natural language:
-```
-🌡️ Temperature is **15.6°C**, feels like **14.7°C**, with **65%** humidity. Wind speed is **5 km/h**.
-```
-
-### Multiline Input
-- Press **Enter** to send message
-- Press **Shift+Enter** to add new line
-
-### Real-Time Weather
-- Automatic city geocoding
-- Current temperature, feels-like, humidity, wind speed, precipitation
-- Contextual weather tips based on conditions
-
-## Customization
-
-### Change AI Model
-Edit `supabase/functions/weather-chat/index.ts` and change the model:
-```typescript
-model: "google/gemini-2.0-flash" // or other available models
-```
-
-### Adjust Typewriter Speed
-Edit `src/components/Aurora.tsx`:
-```typescript
-const speed = 12; // milliseconds per character
-```
-
-### Customize Colors
-Edit `src/index.css` and modify the `--aurora-*` CSS variables:
-```css
---aurora-teal: 173 80% 50%;
---aurora-purple: 280 60% 50%;
---aurora-green: 160 70% 45%;
-```
-
-## API Limits
-
-- **Open-Meteo**: Free tier - unlimited requests
-- **Gemini via Lovable Gateway**: Depends on your account tier
-- **Supabase**: Free tier includes generous Edge Function limits
-
-## Browser Support
-
-- Chrome/Edge 90+
-- Firefox 88+
-- Safari 14+
-- Mobile browsers (iOS Safari, Chrome Mobile)
-
-## Performance Tips
-
-1. Responses load faster on broadband connections
-2. Weather data is cached by Open-Meteo for 10 minutes
-3. Build size is ~600KB (gzipped: ~180KB)
 
 ## Troubleshooting
 
@@ -272,20 +212,6 @@ Edit `src/index.css` and modify the `--aurora-*` CSS variables:
 - Verify Supabase credentials: `npx supabase projects list`
 - Check function logs: `npx supabase functions logs weather-chat`
 
-## License
 
-MIT License - feel free to use this project for personal or commercial use.
-
-## Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-## Support
-
-For issues, questions, or suggestions, please open a GitHub issue.
-
----
-
-**Built with ❤️ using React, Vite, and Supabase**
 
 
